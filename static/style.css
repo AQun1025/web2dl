@@ -1,0 +1,120 @@
+/* === 明亮主題與柔和風格 === */
+body {
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    background: #f6f8fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+h1 {
+    font-size: 28px;
+    color: #2196f3;
+    margin-bottom: 0.5em;
+    text-align: center;
+}
+
+p {
+    color: #666;
+    text-align: center;
+}
+
+textarea, select, button {
+    width: 100%;
+    margin: 15px 0;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+textarea {
+    resize: vertical;
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+}
+
+select {
+    border: 1px solid #ccc;
+    background: #ffffff;
+    color: #333;
+}
+
+option {
+    background: #ffffff;
+    color: #333;
+}
+
+button {
+    background: #03a9f4;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #0288d1;
+}
+
+.error {
+    background: #f44336;
+    color: white;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.preview-container {
+    margin-top: 30px;
+}
+
+.preview {
+    background: #f0f0f0;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.preview img {
+    max-width: 100%;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+
+footer {
+    margin-top: 40px;
+    font-size: 13px;
+    text-align: center;
+    color: #999;
+}
+
+/* === 手機版響應設計 === */
+@media (max-width: 768px) {
+    .container {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    textarea, select, button {
+        font-size: 15px;
+    }
+}

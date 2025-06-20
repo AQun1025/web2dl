@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web2DL - 多平台影片下載器</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>🎵 Web2DL</h1>
+    <p>支援 YouTube、Instagram、Facebook、Bilibili</p>
+
+    {% if error %}
+    <div class="error">{{ error }}</div>
+    {% endif %}
+
+    <form method="POST">
+        <textarea name="url" rows="4" placeholder="請貼上影片連結（可多筆，換行或逗號分隔）" required></textarea>
+        <select name="format" required>
+            <optgroup label="🎵 音訊格式">
+                <option value="mp3">● mp3（高品質）</option>
+                <option value="wav">● wav（無壓縮）</option>
+            </optgroup>
+            <optgroup label="──────────────"></optgroup>
+            <optgroup label="🎥 影片格式">
+                <option value="video720">● 720p（標準 HD）</option>
+                <option value="video1080">● 1080p（Full HD）</option>
+                <option value="video">● 自動（最高畫質）</option>
+            </optgroup>
+        </select>
+        <button type="submit">開始下載</button>
+    </form>
+
+    {% if video_info %}
+    <div class="preview-container">
+        {% if video_info.title %}
+        <h2>下載完成：</h2>
+        <div class="preview">
+            <p><strong>{{ video_info.title }}</strong></p>
+            {% if video_info.thumbnail %}
+                <img src="{{ video_info.thumbnail }}" alt="預覽圖" width="300">
+            {% endif %}
+            <p>檔名：{{ video_info.filename }}</p>
+        </div>
+        {% endif %}
+    </div>
+    {% endif %}
+
+    <footer>
+        <p>由 AQun 製作 • 如無法下載，請自行解決，AQun是打鼓的不是打Code的</p>
+    </footer>
+</div>
+</body>
+</html>
