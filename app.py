@@ -8,6 +8,7 @@ app = Flask(__name__)
 DOWNLOAD_DIR = os.path.join(os.getcwd(), 'downloads')
 os.makedirs(DOWNLOAD_DIR, exist_ok=True)
 
+# 清除下載資料夾
 def clean_download_folder():
     for f in os.listdir(DOWNLOAD_DIR):
         try:
@@ -15,6 +16,7 @@ def clean_download_folder():
         except:
             pass
 
+# 下載一筆連結並轉成 mp3 或 wav
 def download_audio(video_url, format_choice):
     uid = str(uuid.uuid4())[:8]
     output_template = os.path.join(DOWNLOAD_DIR, f'{uid}_%(title).80s.%(ext)s')
@@ -44,6 +46,7 @@ def download_audio(video_url, format_choice):
     except Exception as e:
         return {'error': str(e)}
 
+# 首頁與處理表單
 @app.route('/', methods=['GET', 'POST'])
 def index():
     audio_infos = []
@@ -67,5 +70,7 @@ def index():
 
     return render_template('index.html', audio_info=audio_infos[0] if audio_infos else None)
 
+# 正確處理埠口，支援本地與 Render 雲端
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    port = int(os.environ.get("PORT", 5000))  # Render 指定 PORT
+    app.run(debug=True, host="0.0.0.0", port=port)
