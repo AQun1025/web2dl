@@ -1,120 +1,90 @@
-/* === 明亮主題與柔和風格 === */
 body {
-    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-    background: #f6f8fa;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #f8f9fa;
     color: #333;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .container {
+    width: 90%;
     max-width: 600px;
-    margin: 50px auto;
-    padding: 30px;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
 }
 
 h1 {
-    font-size: 28px;
-    color: #2196f3;
-    margin-bottom: 0.5em;
-    text-align: center;
+    font-size: 2.5em;
+    color: #3da9a9;  /* 改為溫和藍綠色 */
+    margin-bottom: 10px;
 }
 
-p {
-    color: #666;
-    text-align: center;
+h3 {
+    font-weight: normal;
+    color: #555;
+    margin-bottom: 30px;
 }
 
-textarea, select, button {
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    margin: 15px 0;
-    padding: 12px;
-    font-size: 16px;
-    border-radius: 6px;
-    box-sizing: border-box;
-    font-family: inherit;
 }
 
 textarea {
-    resize: vertical;
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
     border: 1px solid #ccc;
-    background: #f9f9f9;
+    border-radius: 10px;
+    resize: vertical;
+    background-color: #ffffff;
+    box-sizing: border-box;
 }
 
 select {
-    border: 1px solid #ccc;
-    background: #ffffff;
-    color: #333;
-}
-
-option {
-    background: #ffffff;
-    color: #333;
-}
-
-button {
-    background: #03a9f4;
-    color: white;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-button:hover {
-    background: #0288d1;
-}
-
-.error {
-    background: #f44336;
-    color: white;
-    padding: 12px;
-    border-radius: 6px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    text-align: center;
-}
-
-.preview-container {
-    margin-top: 30px;
-}
-
-.preview {
-    background: #f0f0f0;
-    padding: 15px;
+    padding: 10px;
     border-radius: 8px;
-    text-align: center;
-    margin-top: 15px;
-}
-
-.preview img {
-    max-width: 100%;
-    border-radius: 6px;
+    font-size: 1em;
     margin-top: 10px;
 }
 
-footer {
-    margin-top: 40px;
-    font-size: 13px;
-    text-align: center;
-    color: #999;
+input[type="submit"] {
+    margin-top: 20px;
+    background-color: #3da9a9;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-/* === 手機版響應設計 === */
-@media (max-width: 768px) {
-    .container {
-        margin: 20px;
-        padding: 20px;
+input[type="submit"]:hover {
+    background-color: #318f8f;
+}
+
+footer {
+    margin-top: auto;
+    padding: 20px;
+    font-size: 0.9em;
+    color: #888;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    textarea {
+        font-size: 1em;
     }
 
-    h1 {
-        font-size: 24px;
-    }
-
-    textarea, select, button {
-        font-size: 15px;
+    input[type="submit"] {
+        width: 100%;
     }
 }
